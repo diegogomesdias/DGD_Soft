@@ -27,9 +27,9 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Label layoutX="109.0" layoutY="14.0" text="Cadastro de Clientes" textAlignment="CENTER">
+                  <Label layoutX="342.0" layoutY="14.0" text="Cadastro de Clientes" textAlignment="CENTER">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
                   <Group AnchorPane.rightAnchor="20.0">
@@ -39,82 +39,82 @@
                   </Group>
                   <Label layoutX="11.0" layoutY="55.0" text="Codigo">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
-                  <Label layoutX="11.0" layoutY="94.0" text="Nome">
+                  <Label layoutX="14.0" layoutY="104.0" text="Nome">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
                   <Label layoutX="196.0" layoutY="155.0" prefHeight="17.0" prefWidth="27.0" text="CPF">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
                   <Label layoutX="13.0" layoutY="325.0" text="Telefone">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
                   <Label fx:id="labelClienteCodigo" layoutX="68.0" layoutY="57.0" prefHeight="17.0" prefWidth="38.0" text="00" />
-                  <Label layoutX="306.0" layoutY="94.0" text="Sexo">
+                  <Label layoutX="300.0" layoutY="103.0" text="Sexo">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
-                  <Label layoutX="457.0" layoutY="93.0" text="Nacionalidade">
+                  <Label layoutX="458.0" layoutY="103.0" text="Nacionalidade">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
                   <Label layoutX="14.0" layoutY="155.0" text="Est. Civil">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
                   <Label layoutX="345.0" layoutY="155.0" text="RG">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
                   <Label layoutX="473.0" layoutY="156.0" text="Nascimento">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
                   <Label layoutX="14.0" layoutY="213.0" text="Endereço">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
                   <Label layoutX="413.0" layoutY="214.0" text="Nº">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
                   <Label layoutX="504.0" layoutY="213.0" text="Comp.">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
                   <Label layoutX="13.0" layoutY="269.0" text="Bairro">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
                   <Label layoutX="234.0" layoutY="269.0" text="UF">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
                   <Label layoutX="383.0" layoutY="269.0" text="Cidade">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
                   <ComboBox fx:id="boxUF" layoutX="262.0" layoutY="265.0" prefHeight="25.0" prefWidth="108.0" />
                   <ComboBox fx:id="boxCidade" layoutX="435.0" layoutY="265.0" prefHeight="25.0" prefWidth="155.0" />
-                  <Button fx:id="btnInserir" layoutX="587.0" layoutY="420.0" mnemonicParsing="false" onAction="#handleBtnInserir" prefHeight="25.0" prefWidth="64.0" text="Inserir" />
-                  <Button fx:id="btnAlterar" layoutX="664.0" layoutY="420.0" mnemonicParsing="false" onAction="#handleBtnAlterar" prefHeight="25.0" prefWidth="64.0" text="Alterar" />
-                  <Button fx:id="btnRemover" layoutX="743.0" layoutY="420.0" mnemonicParsing="false" onAction="#handleBtnExcluir" text="Remover" />
+                  <Button fx:id="btnInserir" layoutX="664.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleBtnInserir" prefHeight="25.0" prefWidth="64.0" text="Inserir" />
+                  <Button fx:id="btnAlterar" layoutX="741.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleBtnAlterar" prefHeight="25.0" prefWidth="64.0" text="Alterar" />
+                  <Button fx:id="btnRemover" layoutX="820.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleBtnExcluir" text="Remover" />
                   <Label layoutX="182.0" layoutY="325.0" text="Celular">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
                   <Label layoutX="388.0" layoutY="325.0" text="Email">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
-                  <Label fx:id="ClienteNome" layoutX="59.0" layoutY="96.0" prefHeight="17.0" prefWidth="224.0" />
+                  <Label fx:id="ClienteNome" layoutX="60.0" layoutY="105.0" prefHeight="17.0" prefWidth="224.0" />
                   <Label fx:id="boxEstCivil" layoutX="81.0" layoutY="157.0" prefHeight="17.0" prefWidth="108.0" />
-                  <Label fx:id="boxSexo" layoutX="345.0" layoutY="96.0" prefHeight="17.0" prefWidth="102.0" />
-                  <Label fx:id="boxNacionalidade" layoutX="562.0" layoutY="94.0" prefHeight="17.0" prefWidth="102.0" />
+                  <Label fx:id="boxSexo" layoutX="345.0" layoutY="104.0" prefHeight="17.0" prefWidth="102.0" />
+                  <Label fx:id="boxNacionalidade" layoutX="562.0" layoutY="104.0" prefHeight="17.0" prefWidth="102.0" />
                   <Label fx:id="ClienteCPF" layoutX="226.0" layoutY="155.0" prefHeight="17.0" prefWidth="102.0" />
                   <Label fx:id="ClienteRG" layoutX="371.0" layoutY="155.0" prefHeight="17.0" prefWidth="102.0" />
                   <Label fx:id="ClienteNasc" layoutX="562.0" layoutY="157.0" prefHeight="17.0" prefWidth="80.0" />
@@ -125,6 +125,12 @@
                   <Label fx:id="ClienteTelefone" layoutX="75.0" layoutY="327.0" prefHeight="17.0" prefWidth="102.0" />
                   <Label fx:id="ClienteCelular" layoutX="234.0" layoutY="327.0" prefHeight="17.0" prefWidth="102.0" />
                   <Label fx:id="ClienteEmail" layoutX="435.0" layoutY="327.0" prefHeight="17.0" prefWidth="155.0" />
+                  <Separator layoutX="14.0" layoutY="75.0" prefHeight="1.0" prefWidth="108.0" />
+                  <Separator layoutX="14.0" layoutY="121.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Separator layoutX="12.0" layoutY="173.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Separator layoutX="12.0" layoutY="231.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Separator layoutX="12.0" layoutY="287.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Separator layoutX="16.0" layoutY="343.0" prefHeight="3.0" prefWidth="633.0" />
                </children>
             </AnchorPane>
         </items>
