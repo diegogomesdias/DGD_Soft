@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="378.0" prefWidth="705.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLAnchorPaneCadastrosClientesDialogController">
+   <children>
+      <TextField fx:id="ClienteEmail" layoutX="400.0" layoutY="270.0" prefHeight="25.0" prefWidth="224.0" />
+      <Label layoutX="363.0" layoutY="274.0" text="Email" />
+      <TextField fx:id="ClienteCelular" layoutX="245.0" layoutY="270.0" prefHeight="25.0" prefWidth="102.0" />
+      <Label layoutX="201.0" layoutY="274.0" text="Celular" />
+      <TextField fx:id="ClienteTelefone" layoutX="88.0" layoutY="270.0" prefHeight="25.0" prefWidth="102.0" />
+      <TextField fx:id="ClienteBairro" layoutX="88.0" layoutY="214.0" />
+      <ComboBox fx:id="boxCidade" layoutX="454.0" layoutY="214.0" prefHeight="25.0" prefWidth="155.0" />
+      <ComboBox fx:id="boxUF" layoutX="281.0" layoutY="214.0" prefHeight="25.0" prefWidth="108.0" />
+      <Label layoutX="402.0" layoutY="218.0" text="Cidade" />
+      <Label layoutX="253.0" layoutY="218.0" text="UF" />
+      <Label layoutX="32.0" layoutY="218.0" text="Bairro" />
+      <TextField fx:id="ClienteComp" layoutX="529.0" layoutY="158.0" prefHeight="25.0" prefWidth="63.0" />
+      <TextField fx:id="ClienteNumero" layoutX="409.0" layoutY="158.0" prefHeight="25.0" prefWidth="63.0" />
+      <TextField fx:id="ClienteEnd" layoutX="89.0" layoutY="158.0" prefHeight="25.0" prefWidth="288.0" />
+      <Label layoutX="483.0" layoutY="162.0" text="Comp." />
+      <Label layoutX="392.0" layoutY="162.0" text="Nº" />
+      <Label layoutX="33.0" layoutY="162.0" text="Endereço" />
+      <TextField fx:id="ClienteNasc" layoutX="577.0" layoutY="100.0" prefHeight="25.0" prefWidth="80.0" />
+      <Label layoutX="505.0" layoutY="104.0" text="Nascimento" />
+      <TextField fx:id="ClienteRG" layoutX="393.0" layoutY="100.0" prefHeight="25.0" prefWidth="102.0" />
+      <TextField fx:id="ClienteCPF" layoutX="241.0" layoutY="100.0" prefHeight="25.0" prefWidth="102.0" />
+      <TextField fx:id="ClienteNome" layoutX="88.0" layoutY="39.0" prefHeight="25.0" prefWidth="224.0" />
+      <Label layoutX="364.0" layoutY="104.0" text="RG" />
+      <ComboBox fx:id="boxEstCivil" layoutX="88.0" layoutY="100.0" prefHeight="25.0" prefWidth="116.0" />
+      <ComboBox fx:id="boxNacionalidade" layoutX="555.0" layoutY="39.0" prefHeight="25.0" prefWidth="102.0" />
+      <ComboBox fx:id="boxSexo" layoutX="363.0" layoutY="39.0" prefHeight="25.0" prefWidth="102.0" />
+      <Label layoutX="33.0" layoutY="104.0" text="Est. Civil" />
+      <Label layoutX="474.0" layoutY="43.0" text="Nacionalidade" />
+      <Label layoutX="325.0" layoutY="43.0" text="Sexo" />
+      <Label layoutX="32.0" layoutY="274.0" text="Telefone" />
+      <Label layoutX="215.0" layoutY="104.0" prefHeight="17.0" prefWidth="27.0" text="CPF" />
+      <Label layoutX="30.0" layoutY="43.0" text="Nome" />
+      <Group>
+         <children>
+            <Button fx:id="btnConfirmar" layoutX="512.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleBtnConfirmar" prefHeight="29.0" prefWidth="76.0" text="Confirmar" />
+            <Button fx:id="btnCancelar" layoutX="601.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleBtnCancelar" prefHeight="29.0" prefWidth="76.0" text="Cancelar" />
+         </children>
+      </Group>
+   </children>
+</AnchorPane>
