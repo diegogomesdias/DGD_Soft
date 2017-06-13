@@ -189,20 +189,17 @@ public class FXMLAnchorPaneCadastrosClientesDialogController implements Initiali
         cliente.setCpf(ClienteCPF.getText());
         cliente.setRg(ClienteRG.getText());
         cliente.setEnd(ClienteEnd.getText());
-        //cidade
+        cliente.setCidade(String.valueOf(boxCidade.valueProperty().get()));
         cliente.setBairro(ClienteBairro.getText());
-        //boxUF
+        cliente.setUf(String.valueOf(boxUF.valueProperty().get()));
         cliente.setTelefone(ClienteTelefone.getText());
         //IMAGEM
-        //boxSexo
-        //boxNacionalidade
+        cliente.setSexo(String.valueOf(boxSexo.valueProperty().get()));
+        cliente.setNacionalidade(String.valueOf(boxNacionalidade.valueProperty().get()));
         //CEP Ver se vai utilizar
         //cliente.setNasc(formataData(ClienteNasc.getText()));
-        //boxEstCivil
-        //cliente.setCelular(ClienteCelular.getText());
-        //cliente.setEmail(ClienteEmail.getText());
-        //cliente.setNumeroEnd(Integer.parseInt(ClienteNumero.getText()));
-        //cliente.setComplemento(ClienteComp.getText());
+        cliente.setEstCivil(String.valueOf(boxSexo.valueProperty().get()));
+        cliente.setNumeroEnd(Integer.parseInt(ClienteNumero.getText()));
         
         btnConfirmarClicked = true;
         dialogStage.close();

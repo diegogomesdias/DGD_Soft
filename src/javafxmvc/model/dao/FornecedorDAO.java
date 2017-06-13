@@ -54,9 +54,24 @@ public class FornecedorDAO {
     }
     
     public boolean alterar(Fornecedor fornecedor) {
-	String update = "update empresa set fantasia = ?,rsocial = ?,cnpj = ?,incsocial = ?,tipoempresa = ?,"
-			+ "endereco = ?,numero = ?,complemento = ?,bairro = ?,cep = ?,telefone = ?,cidade = ?,"
-                        + "email = ?,uf = ? ,imagem = ?where id = ?  and tipo =  "+tipo+"";
+	String update = "update empresa set "
+                    + "fantasia = ?,"
+                    + "rsocial = ?,"
+                    + "cnpj = ?,"
+                    + "incsocial = ?,"
+                    + "tipoempresa = ?,"
+                    + "endereco = ?,"
+                    + "numero = ?,"
+                    + "complemento = ?,"
+                    + "bairro = ?,"
+                    + "cep = ?,"
+                    + "telefone = ?,"
+                    + "cidade = ?,"
+                    + "email = ?,"
+                    + "uf = ? ,"
+                    + "imagem = ?, "
+                    + "tipo = "+tipo+ ""
+                    + "where id = ?  and tipo =  "+tipo+"";
 	try {
             PreparedStatement stmt = connection.prepareStatement(update); 
             stmt.setString(1,fornecedor.getFantasia());

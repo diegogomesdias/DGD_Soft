@@ -50,8 +50,19 @@ public class ClienteDAO {
     }
 
     public boolean alterar(Cliente cliente) {
-        String sql = "UPDATE cliente SET nome=?, cpf=?, rg=?,endereco=?,cidade=?bairro=?,uf=,telefone = ?,"
-                + "sexo=?,nacionalidade+?,estcivil=? WHERE id=?";
+        String sql = "UPDATE cliente SET "
+                    + "nome=?, "
+                    + "cpf=?, "
+                    + "rg=?,"
+                    + "endereco=?,"
+                    + "cidade=?"
+                    + "bairro=?,"
+                    + "uf=,"
+                    + "telefone = ?,"
+                    + "sexo=?,"
+                    + "nacionalidade+?,"
+                    + "estcivil=? "
+                    + "WHERE id=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, cliente.getNome());

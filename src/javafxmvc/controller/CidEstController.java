@@ -1,7 +1,4 @@
 package javafxmvc.controller;
-import java.util.List;
-import javafxmvc.model.dao.CidEstDao;
-import javafxmvc.model.domain.CidadeEstado;
 
 public class CidEstController {
 
