@@ -18,9 +18,11 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        stage.setTitle("Teste");
+        stage.setTitle("D.G.D; Soft");
         //stage.setMaximized(true);//tela inicia maximizada
         stage.show();
+        
+        
     }
 
     public static void main(String[] args) {

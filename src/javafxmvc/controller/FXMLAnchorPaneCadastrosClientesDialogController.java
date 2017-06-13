@@ -21,42 +21,24 @@ import javafxmvc.model.domain.Cliente;
 
 public class FXMLAnchorPaneCadastrosClientesDialogController implements Initializable {
 
-     @FXML
-    private TextField ClienteNome;
-    @FXML
-    private ComboBox boxSexo;
-    @FXML
-    private ComboBox boxNacionalidade;
-    @FXML
-    private ComboBox boxEstCivil;
-    @FXML
-    private TextField ClienteCPF;
-    @FXML
-    private TextField ClienteRG;
-    @FXML
-    private TextField ClienteNasc;
-    @FXML
-    private TextField ClienteEnd;
-    @FXML
-    private TextField ClienteNumero;
-    @FXML
-    private TextField ClienteComp;
-    @FXML
-    private TextField ClienteBairro;
-    @FXML
-    private ComboBox boxUF;
-    @FXML
-    private ComboBox boxCidade;
-    @FXML
-    private TextField ClienteTelefone;
-    @FXML
-    private TextField ClienteCelular;
-    @FXML
-    private TextField ClienteEmail;
-    @FXML
-    private Button btnConfirmar;
-    @FXML
-    private Button btnCancelar;
+    @FXML private TextField ClienteNome;
+    @FXML private ComboBox boxSexo;
+    @FXML private ComboBox boxNacionalidade;
+    @FXML private ComboBox boxEstCivil;
+    @FXML private TextField ClienteCPF;
+    @FXML private TextField ClienteRG;
+    @FXML private TextField ClienteNasc;
+    @FXML private TextField ClienteEnd;
+    @FXML private TextField ClienteNumero;
+    @FXML private TextField ClienteComp;
+    @FXML private TextField ClienteBairro;
+    @FXML private ComboBox boxUF;
+    @FXML private ComboBox boxCidade;
+    @FXML private TextField ClienteTelefone;
+    @FXML private TextField ClienteCelular;
+    @FXML private TextField ClienteEmail;
+    @FXML private Button btnConfirmar;
+    @FXML private Button btnCancelar;
     
     private Stage dialogStage;
     private boolean btnConfirmarClicked = false;

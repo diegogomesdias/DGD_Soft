@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -25,8 +26,99 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Label fx:id="FornecedorNome" layoutX="63.0" layoutY="50.0" prefHeight="17.0" prefWidth="114.0" text="Label" />
-                  <Label fx:id="FornecedorCNPJ" layoutX="63.0" layoutY="89.0" text="Label" />
+                  <Label fx:id="FornecedorNome" layoutX="112.0" layoutY="104.0" prefHeight="17.0" prefWidth="114.0" />
+                  <Label fx:id="FornecedorCNPJ" layoutX="359.0" layoutY="152.0" />
+                  <Label layoutX="14.0" layoutY="104.0" text="Nome Fantasia">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="315.0" layoutY="104.0" text="Razão Social">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="16.0" layoutY="160.0" text="Tipo de Empresa">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="314.0" layoutY="152.0" text="CNPJ">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="504.0" layoutY="152.0" text="Insc. Social">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="214.0" text="Enrredeço">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="311.0" layoutY="213.0" text="Numero">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="270.0" text="Bairro">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="314.0" layoutY="269.0" text="UF">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="504.0" layoutY="269.0" text="Cidade">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="326.0" text="Email">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="314.0" layoutY="325.0" text="Cep">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="504.0" layoutY="325.0" text="Telefone">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="FornecedorRSocial" layoutX="414.0" layoutY="104.0" />
+                  <Label fx:id="FornecedorEndereco" layoutX="112.0" layoutY="214.0" />
+                  <Label fx:id="FornecedorBairro" layoutX="112.0" layoutY="270.0" />
+                  <Label fx:id="FornecedorEmail" layoutX="112.0" layoutY="326.0" />
+                  <Label fx:id="FornecedorNumero" layoutX="364.0" layoutY="213.0" />
+                  <Label fx:id="FornecedorUF" layoutX="367.0" layoutY="269.0" />
+                  <Label fx:id="FornecedorCep" layoutX="367.0" layoutY="325.0" />
+                  <Label fx:id="FornecedorTipoEmpresa" layoutX="134.0" layoutY="160.0" />
+                  <Label fx:id="FornecedorInscSocial" layoutX="580.0" layoutY="152.0" />
+                  <Label fx:id="FornecedorCidade" layoutX="580.0" layoutY="269.0" />
+                  <Label fx:id="FornecedorTelefone" layoutX="580.0" layoutY="325.0" />
+                  <Label fx:id="FornecedorCodigo" layoutX="112.0" layoutY="55.0" />
+                  <Label layoutX="16.0" layoutY="55.0" text="Código">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="24.0" layoutY="85.0" prefHeight="1.0" prefWidth="108.0" />
+                  <Separator layoutX="13.0" layoutY="343.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Separator layoutX="13.0" layoutY="287.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Separator layoutX="13.0" layoutY="231.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Separator layoutX="13.0" layoutY="173.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Separator layoutX="13.0" layoutY="121.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Button fx:id="btnRemover" layoutX="830.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleBtnExcluir" text="Remover" />
+                  <Button fx:id="btnAlterar" layoutX="751.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleBtnAlterar" prefHeight="25.0" prefWidth="64.0" text="Alterar" />
+                  <Button fx:id="btnInserir" layoutX="674.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleBtnInserir" prefHeight="25.0" prefWidth="64.0" text="Inserir" />
                </children>
             </AnchorPane>
         </items>
