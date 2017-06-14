@@ -3,12 +3,8 @@ package javafxmvc.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -17,7 +13,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -28,7 +23,6 @@ import javafxmvc.model.dao.CidEstDao;
 import javafxmvc.model.dao.ClienteDAO;
 import javafxmvc.model.database.Database;
 import javafxmvc.model.database.DatabaseFactory;
-import javafxmvc.model.domain.CidadeEstado;
 import javafxmvc.model.domain.Cliente;
 
 public class FXMLAnchorPaneCadastrosClientesController implements Initializable {
