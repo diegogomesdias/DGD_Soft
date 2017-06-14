@@ -2,9 +2,11 @@ package javafxmvc.controller;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -14,9 +16,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafxmvc.model.dao.CidEstDao;
-import javafxmvc.model.dao.ClienteDAO;
 import javafxmvc.model.database.Database;
 import javafxmvc.model.database.DatabaseFactory;
+import javafxmvc.model.domain.CidadeEstado;
 import javafxmvc.model.domain.Cliente;
 
 public class FXMLAnchorPaneCadastrosClientesDialogController implements Initializable {
@@ -39,7 +41,7 @@ public class FXMLAnchorPaneCadastrosClientesDialogController implements Initiali
     @FXML private TextField ClienteEmail;
     @FXML private Button btnConfirmar;
     @FXML private Button btnCancelar;
-    
+       
     private Stage dialogStage;
     private boolean btnConfirmarClicked = false;
     private Cliente cliente;
@@ -60,7 +62,7 @@ public class FXMLAnchorPaneCadastrosClientesDialogController implements Initiali
         carregarEstado();
         carregarEstCivil();
         carregaSexo();
-        CarregaPais();
+        //CarregaPais();
         carregaCidades();
     }
 
@@ -107,7 +109,19 @@ public class FXMLAnchorPaneCadastrosClientesDialogController implements Initiali
             boxUF.getItems().add(nomeEstado);
         });
     }
-    
+    /*
+    private List<CidadeEstado> cidadePorEstado() throws Exception {
+        CidEstController cc = new CidEstController();
+        try 
+        {    
+            return cc.buscaCidadePorEstado (uf);
+        }
+        catch (SQLException e) {                } 
+        return Collections.emptyList();
+    }
+    */
+
+    //CARREGA TODAS AS CIDADES DE TODOS OS ESTADOS, NÃO É O MELHOR METODO, MAS O UNICO ENCONTRADO
     public void carregaCidades(){
         List<String> listaCidade = cidestDao.listaCidades();
         listaCidade.forEach((nomeCidade) -> {
@@ -117,7 +131,7 @@ public class FXMLAnchorPaneCadastrosClientesDialogController implements Initiali
     
     //TORNA OS NOMES COMPLETOS EM SIGLAS
     private String EstadoNomeParaSigla(){
-        String estado = null;
+        String estado = null;        
         if("Acre".equals(boxUF.valueProperty().get()) ) estado = "AC";
         if("Alagoas".equals(boxUF.valueProperty().get()) ) estado = "AL";
         if("Amazonas".equals(boxUF.valueProperty().get()) ) estado = "AM";
@@ -170,31 +184,28 @@ public class FXMLAnchorPaneCadastrosClientesDialogController implements Initiali
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
-        
         this.ClienteNome.setText(cliente.getNome());
         this.ClienteCPF.setText(cliente.getCpf());
         this.ClienteRG.setText(cliente.getRg());
         this.ClienteEnd.setText(cliente.getEnd());
-        //cidade
+        this.boxCidade.valueProperty().set(String.valueOf(cliente.getCidade()));
         this.ClienteBairro.setText(cliente.getBairro());
-        //buxuf
+        this.boxUF.valueProperty().set(String.valueOf(cliente.getUf()));
         this.ClienteTelefone.setText(cliente.getTelefone());
+        this.boxSexo.valueProperty().set(String.valueOf(cliente.getSexo()));
+        this.boxNacionalidade.valueProperty().set(String.valueOf(cliente.getNacionalidade()));
+        this.boxEstCivil.valueProperty().set(String.valueOf(cliente.getEstCivil()));
+        this.ClienteNumero.setText(String.valueOf(cliente.getNumeroEnd()));
         //IMAGEM
-        //boxSexo
-        //boxNacionalidade
         //CEP Ver se vai utilizar
         //this.ClienteNasc.setText(String.valueOf(cliente.getNasc()));
-        //boxEstCivil
-        //cliente.setCelular(ClienteCelular.getText());
-        //cliente.setEmail(ClienteEmail.getText());
-        //cliente.setNumeroEnd(Integer.parseInt(ClienteNumero.getText()));
-        //cliente.setComplemento(ClienteComp.getText());
     }
-    
+       
     @FXML
     public void handleBtnConfirmar() throws Exception{
         cliente.setNome(ClienteNome.getText());
-        cliente.setCpf(ClienteCPF.getText());
+        //cliente.setCpf(ClienteCPF.getText());
+        if(ClienteCPF.getText() == null){cliente.setCpf("0");}else{cliente.setCpf(ClienteCPF.getText());}
         cliente.setRg(ClienteRG.getText());
         cliente.setEnd(ClienteEnd.getText());
         cliente.setCidade(String.valueOf(boxCidade.valueProperty().get()));
@@ -202,12 +213,12 @@ public class FXMLAnchorPaneCadastrosClientesDialogController implements Initiali
         cliente.setUf(String.valueOf(boxUF.valueProperty().get()));
         cliente.setTelefone(ClienteTelefone.getText());
         //IMAGEM
-        cliente.setSexo(String.valueOf(boxSexo.valueProperty().get()));
-        cliente.setNacionalidade(String.valueOf(boxNacionalidade.valueProperty().get()));
         //CEP Ver se vai utilizar
         //cliente.setNasc(formataData(ClienteNasc.getText()));
-        cliente.setEstCivil(String.valueOf(boxSexo.valueProperty().get()));
-        cliente.setNumeroEnd(Integer.parseInt(ClienteNumero.getText()));
+        cliente.setNacionalidade(String.valueOf(boxNacionalidade.valueProperty().get()));
+        cliente.setEstCivil(String.valueOf(boxEstCivil.valueProperty().get()));
+        cliente.setSexo(String.valueOf(boxSexo.valueProperty().get()));
+        //cliente.setNumeroEnd(Integer.parseInt(ClienteNumero.getText()));      //não tem numero no banco de dados
         
         btnConfirmarClicked = true;
         dialogStage.close();

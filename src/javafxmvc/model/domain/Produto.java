@@ -6,18 +6,29 @@ public class Produto implements Serializable {
 
     private int cdProduto;
     private String nome;
-    private double preco;
-    private int quantidade;
-    private Categoria categoria;
+    private String fabricante;
+    private double valorcusto;
+    private double valorlucro;
+    private double valorvenda;
+    private int estoque;
+    private String unidade;
+    private String cnae;
 
     public Produto() {
     }
 
-    public Produto(int cdProduto, String nome, double preco, int quantidade) {
+    public Produto(int cdProduto, String nome, String fabricante,double valorcusto, double valorlucro, 
+                   double valorvenda, int estoque,String unidade,String cnae ) 
+    {
         this.cdProduto = cdProduto;
         this.nome = nome;
-        this.preco = preco;
-        this.quantidade = quantidade;
+        this.fabricante = fabricante;
+        this.valorcusto = valorcusto;
+        this.valorlucro = valorlucro;
+        this.valorvenda = valorvenda;
+        this.estoque = estoque;
+        this.unidade = unidade;
+        this.cnae = cnae;
     }
 
     public int getCdProduto() {
@@ -36,28 +47,60 @@ public class Produto implements Serializable {
         this.nome = nome;
     }
 
-    public double getPreco() {
-        return preco;
+    public String getFabricante() {
+        return fabricante;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void setFabricante(String fabricante) {
+        this.fabricante = fabricante;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public double getValorcusto() {
+        return valorcusto;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+    public void setValorcusto(double valorcusto) {
+        this.valorcusto = valorcusto;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public double getValorlucro() {
+        return valorlucro;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
+    public void setValorlucro(double valorlucro) {
+        this.valorlucro = valorlucro;
+    }
+
+    public double getValorvenda() {
+        return valorvenda;
+    }
+
+    public void setValorvenda(double valorvenda) {
+        this.valorvenda = valorvenda;
+    }
+
+    public int getEstoque() {
+        return estoque;
+    }
+
+    public void setEstoque(int estoque) {
+        this.estoque = estoque;
+    }
+
+    public String getUnidade() {
+        return unidade;
+    }
+
+    public void setUnidade(String unidade) {
+        this.unidade = unidade;
+    }
+
+    public String getCnae() {
+        return cnae;
+    }
+
+    public void setCnae(String cnae) {
+        this.cnae = cnae;
     }
 
     @Override

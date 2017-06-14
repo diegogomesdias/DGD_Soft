@@ -71,24 +71,21 @@ public class CidEstDao {
         return listaCidades;//Retorne a lista de String com todos os nome do banco de dados
     }    
        
-   public List<CidadeEstado> getCidadeByEstado(String nom_cidade) throws Exception {
-            String select = "SELECT nom_cidade FROM cidade WHERE estado = ?";
-            CidadeEstado cidade = null;
-            PreparedStatement stmt = getConnection().prepareStatement(select);
-            List<CidadeEstado> cidades = new ArrayList<>();	
-            stmt.setString(1, nom_cidade);
-            ResultSet rs = stmt.executeQuery();
+    public List<CidadeEstado> getCidadeByEstado(String nom_cidade) throws Exception {
+        String select = "SELECT nom_cidade FROM cidade WHERE estado = ?";
+        CidadeEstado cidade = null;
+        PreparedStatement stmt = getConnection().prepareStatement(select);
+        List<CidadeEstado> cidades = new ArrayList<CidadeEstado>(); 
+        stmt.setString(1, nom_cidade);
+        ResultSet rs = stmt.executeQuery();
 
-            while (rs.next()) {
-                cidade = new CidadeEstado();
-                cidade.setNom_cidade(rs.getString("nom_cidade"));
-                cidades.add(cidade);
-            }
-            rs.close();
-            stmt.close();
-            return cidades;
+        while (rs.next()) {
+            cidade = new CidadeEstado();
+            cidade.setNom_cidade(rs.getString("nom_cidade"));
+            cidades.add(cidade);
         }
-
-    
-        
+        rs.close();
+        stmt.close();
+        return cidades;
+    }        
 }

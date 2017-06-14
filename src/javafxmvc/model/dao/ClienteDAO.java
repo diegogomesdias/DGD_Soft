@@ -65,12 +65,12 @@ public class ClienteDAO {
                     + "cpf=?, "
                     + "rg=?,"
                     + "endereco=?,"
-                    + "cidade=?"
+                    + "cidade=?,"
                     + "bairro=?,"
-                    + "uf=,"
+                    + "uf=?,"
                     + "telefone = ?,"
                     + "sexo=?,"
-                    + "nacionalidade+?,"
+                    + "nacionalidade=?,"
                     + "estcivil=? "
                     + "WHERE id=?";
         try {
@@ -88,6 +88,7 @@ public class ClienteDAO {
             stmt.setString(10, cliente.getNacionalidade());
             //stmt.setDate(11, (Date) cliente.getNasc());
             stmt.setString(11, cliente.getEstCivil());
+            stmt.setInt(12, cliente.getCdCliente());
             stmt.execute();
             return true;
         } catch (SQLException ex) {
@@ -110,7 +111,7 @@ public class ClienteDAO {
     }
 
     public List<Cliente> listar() {
-        String sql = "SELECT * FROM cliente";
+        String sql = "SELECT * FROM cliente order by nome";
         List<Cliente> retorno = new ArrayList<>();
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);

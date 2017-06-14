@@ -7,7 +7,7 @@ import javafxmvc.model.domain.CidadeEstado;
 public class CidEstController {
 
     public List<CidadeEstado> buscaCidadePorEstado (String nom_cidade) throws Exception{
-		CidEstDao dao = new CidEstDao();
-		return  dao.getCidadeByEstado(nom_cidade);
-	}
+        CidEstDao dao = new CidEstDao();
+        return  dao.getCidadeByEstado(nom_cidade);
+    }
 }

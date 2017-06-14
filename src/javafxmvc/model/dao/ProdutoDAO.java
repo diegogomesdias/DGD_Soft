@@ -28,9 +28,9 @@ public class ProdutoDAO {
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, produto.getNome());
-            stmt.setDouble(2, produto.getPreco());
-            stmt.setInt(3, produto.getQuantidade());
-            stmt.setInt(4, produto.getCategoria().getCdCategoria());
+            //stmt.setDouble(2, produto.getPreco());
+            //stmt.setInt(3, produto.getQuantidade());
+            //stmt.setInt(4, produto.getCategoria().getCdCategoria());
             stmt.execute();
             return true;
         } catch (SQLException ex) {
@@ -44,9 +44,9 @@ public class ProdutoDAO {
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, produto.getNome());
-            stmt.setDouble(2, produto.getPreco());
-            stmt.setInt(3, produto.getQuantidade());
-            stmt.setInt(4, produto.getCategoria().getCdCategoria());
+            //stmt.setDouble(2, produto.getPreco());
+            //stmt.setInt(3, produto.getQuantidade());
+            //stmt.setInt(4, produto.getCategoria().getCdCategoria());
             stmt.setInt(5, produto.getCdProduto());
             stmt.execute();
             return true;
@@ -70,26 +70,23 @@ public class ProdutoDAO {
     }
 
     public List<Produto> listar() {
-        String sql = "SELECT * FROM produtos";
+        String sql = "SELECT * FROM produto";
         List<Produto> retorno = new ArrayList<>();
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
-            ResultSet resultado = stmt.executeQuery();
-            while (resultado.next()) {
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
                 Produto produto = new Produto();
                 Categoria categoria = new Categoria();
-                produto.setCdProduto(resultado.getInt("cdProduto"));
-                produto.setNome(resultado.getString("nome"));
-                produto.setPreco(resultado.getDouble("preco"));
-                produto.setQuantidade(resultado.getInt("quantidade"));
-                categoria.setCdCategoria(resultado.getInt("cdCategoria"));
-                
-                //Obtendo os dados completos da Categoria associada ao Produto
-                CategoriaDAO categoriaDAO = new CategoriaDAO();
-                categoriaDAO.setConnection(connection);
-                categoria = categoriaDAO.buscar(categoria);
-                
-                produto.setCategoria(categoria);
+                produto.setCdProduto(rs.getInt("id"));
+                produto.setNome(rs.getString("nome"));
+                produto.setFabricante(rs.getString("fabricante"));
+                produto.setValorcusto(rs.getDouble("valorcusto"));
+                produto.setValorlucro(rs.getDouble("valorlucro"));
+                produto.setValorvenda(rs.getDouble("valorlucro"));
+                produto.setEstoque(rs.getInt("estoque"));
+                produto.setUnidade(rs.getString("un"));
+                produto.setCnae(rs.getString("cnae"));
                 retorno.add(produto);
             }
         } catch (SQLException ex) {
@@ -109,10 +106,10 @@ public class ProdutoDAO {
                 Produto produto = new Produto();
                 produto.setCdProduto(resultado.getInt("cdProduto"));
                 produto.setNome(resultado.getString("nome"));
-                produto.setPreco(resultado.getDouble("preco"));
-                produto.setQuantidade(resultado.getInt("quantidade"));
-                categoria.setCdCategoria(resultado.getInt("cdCategoria"));
-                produto.setCategoria(categoria);
+                //produto.setPreco(resultado.getDouble("preco"));
+                //produto.setQuantidade(resultado.getInt("quantidade"));
+                //categoria.setCdCategoria(resultado.getInt("cdCategoria"));
+                //produto.setCategoria(categoria);
                 retorno.add(produto);
             }
         } catch (SQLException ex) {
@@ -132,10 +129,10 @@ public class ProdutoDAO {
             if (resultado.next()) {
                 retorno.setCdProduto(resultado.getInt("cdProduto"));
                 retorno.setNome(resultado.getString("nome"));
-                retorno.setPreco(resultado.getDouble("preco"));
-                retorno.setQuantidade(resultado.getInt("quantidade"));
-                categoria.setCdCategoria(resultado.getInt("cdCategoria"));
-                retorno.setCategoria(categoria);
+                //retorno.setPreco(resultado.getDouble("preco"));
+                //retorno.setQuantidade(resultado.getInt("quantidade"));
+                //categoria.setCdCategoria(resultado.getInt("cdCategoria"));
+                //retorno.setCategoria(categoria);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);

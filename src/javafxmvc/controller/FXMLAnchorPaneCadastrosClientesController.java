@@ -27,59 +27,34 @@ import javafxmvc.model.domain.Cliente;
 
 public class FXMLAnchorPaneCadastrosClientesController implements Initializable {
 
-    @FXML
-    private TableView<Cliente> tableViewClientes;
-    @FXML
-    private TableColumn<Cliente, String> tableColumnClienteNome;
-    @FXML
-    private TableColumn<Cliente, String> tableColumnClienteCpf;
-    @FXML
-    private Button btnInserir;
-    @FXML
-    private Button btnAlterar;
-    @FXML
-    private Button btnExcluir;
-    @FXML
-    private Label labelClienteCodigo;
-    @FXML
-    private Label ClienteNome;
-    @FXML
-    private Label boxSexo;
-    @FXML
-    private Label boxNacionalidade;
-    @FXML
-    private Label boxEstCivil;
-    @FXML
-    private Label ClienteCPF;
-    @FXML
-    private Label ClienteRG;
-    @FXML
-    private Label ClienteNasc;
-    @FXML
-    private Label ClienteEnd;
-    @FXML
-    private Label ClienteNumero;
-    @FXML
-    private Label ClienteComp;
-    @FXML
-    private Label ClienteBairro;
-    @FXML
-    private Label ClienteUF;
-    @FXML
-    private Label ClienteCidade;
-    @FXML
-    private Label ClienteTelefone;
-    @FXML
-    private Label ClienteCelular;
-    @FXML
-    private Label ClienteEmail;
+    @FXML    private TableView<Cliente> tableViewClientes;
+    @FXML    private TableColumn<Cliente, String> tableColumnClienteNome;
+    @FXML    private TableColumn<Cliente, String> tableColumnClienteCpf;
+    @FXML    private Button btnInserir;
+    @FXML    private Button btnAlterar;
+    @FXML    private Button btnExcluir;
+    @FXML    private Label labelClienteCodigo;
+    @FXML    private Label ClienteNome;
+    @FXML    private Label boxSexo;
+    @FXML    private Label boxNacionalidade;
+    @FXML    private Label boxEstCivil;
+    @FXML    private Label ClienteCPF;
+    @FXML    private Label ClienteRG;
+    @FXML    private Label ClienteNasc;
+    @FXML    private Label ClienteEnd;
+    @FXML    private Label ClienteNumero;
+    @FXML    private Label ClienteComp;
+    @FXML    private Label ClienteBairro;
+    @FXML    private Label ClienteUF;
+    @FXML    private Label ClienteCidade;
+    @FXML    private Label ClienteTelefone;
+    @FXML    private Label ClienteCelular;
+    @FXML    private Label ClienteEmail;
     
     @FXML
     private List<Cliente> listClientes;
     private ObservableList<Cliente> observableListClientes;
-    
-    
-    
+       
     //atributos para manipulação de banco de dados
     private final Database database = DatabaseFactory.getDatabase("postgresql");
     private final Connection connection = database.conectar();

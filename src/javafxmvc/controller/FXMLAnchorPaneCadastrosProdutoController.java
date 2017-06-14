@@ -17,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -27,19 +28,19 @@ import javafxmvc.model.database.Database;
 import javafxmvc.model.database.DatabaseFactory;
 import javafxmvc.model.domain.Produto;
 
-/**
- * FXML Controller class
- *
- * @author diego
- */
 public class FXMLAnchorPaneCadastrosProdutoController implements Initializable {
 
-    @FXML
-    private TableView<Produto> tableViewProdutos;
-    @FXML
-    private TableColumn<Produto, String> tableColumnProdutoNome;
-    @FXML
-    private TableColumn<Produto, String> tableColumnProdutoTipo;
+    @FXML   private Label ProdutoCodigo;
+    @FXML   private Label ProdutoNome;
+    @FXML   private Label ProdutoFornecedor;
+    @FXML   private Label ProdutoCNAE;
+    @FXML   private Label ProdutoLucro;
+    @FXML   private Label ProdutoUnidade;
+    @FXML   private Label ProdutoEstoque;
+    
+    @FXML    private TableView<Produto> tableViewProdutos;
+    @FXML    private TableColumn<Produto, String> tableColumnProdutoNome;
+    @FXML    private TableColumn<Produto, String> tableColumnQtdEstoque;
     
     
     @FXML
@@ -54,19 +55,38 @@ public class FXMLAnchorPaneCadastrosProdutoController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        produtoDao.setConnection(connection);
+        carregarTableVielProduto();
+        
+         //listem acionado diante de qualquer alterações na seleção de itens da Tableview
+        tableViewProdutos.getSelectionModel().selectedItemProperty().addListener(
+        (observable,oldValue,newValue) -> selecionarItemTableViewProdutos(newValue));
     }    
     
     public void carregarTableVielProduto(){
         //configura as colunas para exibir o nome e cpf na tabela (TableView)
         tableColumnProdutoNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        tableColumnProdutoTipo.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+        tableColumnQtdEstoque.setCellValueFactory(new PropertyValueFactory<>("estoque"));
         //chama o metodo listar
         listProdutos = produtoDao.listar();
         //converte um observableList para um arraylist
         observableListProdutos = FXCollections.observableArrayList(listProdutos);
         //passa o observablelist para a tableview
         tableViewProdutos.setItems(observableListProdutos);
+    }
+    
+    public void selecionarItemTableViewProdutos(Produto produto){
+        if(produto != null){
+            //ClienteNome.setText(cliente.getNome());
+            ProdutoCodigo.setText(String.valueOf(produto.getCdProduto()));
+            ProdutoNome.setText(produto.getNome());
+            ProdutoFornecedor.setText(produto.getFabricante());
+            ProdutoCNAE.setText(produto.getCnae());
+            ProdutoUnidade.setText(produto.getUnidade());
+            
+        }else{
+            //ClienteNome.setText("");
+        }
     }
     
     @FXML
@@ -91,7 +111,7 @@ public class FXMLAnchorPaneCadastrosProdutoController implements Initializable {
             }
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Por favor, escolha um cliente na Tabela");
+            alert.setContentText("Por favor, escolha um produto na Tabela");
             alert.show();
         }
     }
@@ -104,7 +124,7 @@ public class FXMLAnchorPaneCadastrosProdutoController implements Initializable {
             carregarTableVielProduto();
         }else{
            Alert alert = new Alert(Alert.AlertType.ERROR);
-           alert.setContentText("Por favor, escolha um cliente na Tabela");
+           alert.setContentText("Por favor, escolha um produto na Tabela");
            alert.show(); 
         }
     }
@@ -116,7 +136,7 @@ public class FXMLAnchorPaneCadastrosProdutoController implements Initializable {
         
         //cria um estagio de dialogo(Stage Dialog)
         Stage dialogStage = new Stage();
-        dialogStage.setTitle("Cadastros de Clientes");
+        dialogStage.setTitle("Cadastros de Produtos");
         Scene scene = new Scene(page);
         dialogStage.setScene(scene);
         
