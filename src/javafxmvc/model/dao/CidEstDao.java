@@ -37,31 +37,46 @@ public class CidEstDao {
                     statement.close();
             } catch (SQLException e) {
             }	
-		return listaEstado;//Retorne a lista de String com todos os nome do banco de dados
+        return listaEstado;//Retorne a lista de String com todos os nome do banco de dados
     }
 	
-        public List<String> listaPais() {
-		String sql = "select nom_pais from pais order by nom_pais";
-		List<String> listaPaises = new ArrayList<String>();//Crie uma lista para armazenar os dados do banco
-			
-		try {
-                    try (PreparedStatement statement = connection.prepareStatement(sql); 
-                            ResultSet result = statement.executeQuery()) {
-                        while(result.next()) {
-                            listaPaises.add(result.getString("nom_pais"));//Adicione cada linha retornada do banco
-                        }
+    public List<String> listaPais() {
+        String sql = "select nom_pais from pais order by nom_pais";
+	List<String> listaPaises = new ArrayList<String>();//Crie uma lista para armazenar os dados do banco
+            try {
+                try (PreparedStatement statement = connection.prepareStatement(sql); 
+                     ResultSet result = statement.executeQuery()) {
+                     while(result.next()) {
+                          listaPaises.add(result.getString("nom_pais"));//Adicione cada linha retornada do banco
                     }
-		} catch (SQLException e) {
+                }
+            } catch (SQLException e) {
             }	
-            return listaPaises;//Retorne a lista de String com todos os nome do banco de dados
-	}
+        return listaPaises;//Retorne a lista de String com todos os nome do banco de dados
+    }
    
-	public List<CidadeEstado> getCidadeByEstado(CidadeEstado cid) throws Exception {
+        
+    public List<String> listaCidades() {
+        String sql = "select nom_cidade from cidade order by nom_cidade";
+	List<String> listaCidades = new ArrayList<String>();//Crie uma lista para armazenar os dados do banco
+            try {
+                try (PreparedStatement statement = connection.prepareStatement(sql); 
+                     ResultSet result = statement.executeQuery()) {
+                     while(result.next()) {
+                          listaCidades.add(result.getString("nom_cidade"));//Adicione cada linha retornada do banco
+                    }
+                }
+            } catch (SQLException e) {
+            }	
+        return listaCidades;//Retorne a lista de String com todos os nome do banco de dados
+    }    
+       
+   public List<CidadeEstado> getCidadeByEstado(String nom_cidade) throws Exception {
             String select = "SELECT nom_cidade FROM cidade WHERE estado = ?";
             CidadeEstado cidade = null;
             PreparedStatement stmt = getConnection().prepareStatement(select);
             List<CidadeEstado> cidades = new ArrayList<>();	
-            stmt.setString(1, cid.getEstado());
+            stmt.setString(1, nom_cidade);
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {

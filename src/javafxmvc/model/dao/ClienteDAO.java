@@ -24,8 +24,18 @@ public class ClienteDAO {
     }
     
     public boolean inserir(Cliente cliente) {
-        String sql = "INSERT INTO cliente(nome, cpf, rg,endereco,cidade,bairro,uf,telefone,sexo,"
-                + "nacionalidade,estcivil) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO cliente(nome, "
+                                        + "cpf, "
+                                        + "rg,"
+                                        + "endereco,"
+                                        + "cidade,"
+                                        + "bairro,"
+                                        + "uf,"
+                                        + "telefone,"
+                                        + "sexo,"
+                                        + "nacionalidade,"
+                                        + "estcivil) "
+                                        + "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, cliente.getNome());

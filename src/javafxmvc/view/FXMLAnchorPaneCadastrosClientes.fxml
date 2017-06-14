@@ -98,8 +98,6 @@
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
-                  <ComboBox fx:id="boxUF" layoutX="262.0" layoutY="265.0" prefHeight="25.0" prefWidth="108.0" />
-                  <ComboBox fx:id="boxCidade" layoutX="435.0" layoutY="265.0" prefHeight="25.0" prefWidth="155.0" />
                   <Button fx:id="btnInserir" layoutX="664.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleBtnInserir" prefHeight="25.0" prefWidth="64.0" text="Inserir" />
                   <Button fx:id="btnAlterar" layoutX="741.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleBtnAlterar" prefHeight="25.0" prefWidth="64.0" text="Alterar" />
                   <Button fx:id="btnRemover" layoutX="820.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleBtnExcluir" text="Remover" />
@@ -131,6 +129,8 @@
                   <Separator layoutX="12.0" layoutY="231.0" prefHeight="3.0" prefWidth="633.0" />
                   <Separator layoutX="12.0" layoutY="287.0" prefHeight="3.0" prefWidth="633.0" />
                   <Separator layoutX="16.0" layoutY="343.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Label fx:id="ClienteUF" layoutX="263.0" layoutY="269.0" />
+                  <Label fx:id="ClienteCidade" layoutX="436.0" layoutY="269.0" />
                </children>
             </AnchorPane>
         </items>

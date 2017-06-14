@@ -3,8 +3,12 @@ package javafxmvc.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -24,6 +28,7 @@ import javafxmvc.model.dao.CidEstDao;
 import javafxmvc.model.dao.ClienteDAO;
 import javafxmvc.model.database.Database;
 import javafxmvc.model.database.DatabaseFactory;
+import javafxmvc.model.domain.CidadeEstado;
 import javafxmvc.model.domain.Cliente;
 
 public class FXMLAnchorPaneCadastrosClientesController implements Initializable {
@@ -65,9 +70,9 @@ public class FXMLAnchorPaneCadastrosClientesController implements Initializable 
     @FXML
     private Label ClienteBairro;
     @FXML
-    private ComboBox boxUF;
+    private Label ClienteUF;
     @FXML
-    private ComboBox boxCidade;
+    private Label ClienteCidade;
     @FXML
     private Label ClienteTelefone;
     @FXML
@@ -95,55 +100,13 @@ public class FXMLAnchorPaneCadastrosClientesController implements Initializable 
         clienteDao.setConnection(connection); //conexao setada no cliente dao
         cidestDao.setConnection(connection);
         carregarTableVielCliente();
-        carregarEstado();
+        
         
         //listem acionado diante de qualquer alterações na seleção de itens da Tableview
         tableViewClientes.getSelectionModel().selectedItemProperty().addListener(
         (observable,oldValue,newValue) -> selecionarItemTableViewClientes(newValue));
         
     }    
-    
-    //CARREGA OS ESTADOS E OS ADD EM UMA COMBOBOX    
-    public void carregarEstado(){
-        List<String> listaEstado = cidestDao.listaEstados();
-        listaEstado.forEach((nomeEstado) -> {
-            boxUF.getItems().add(nomeEstado);
-        });
-    }
-    
-    //TORNA OS NOMES COMPLETOS EM SIGLAS
-    private String EstadoNomeParaSigla(){
-        String estado = null;
-        if("Acre".equals(boxUF.valueProperty().get()) ) estado = "AC";
-        if("Alagoas".equals(boxUF.valueProperty().get()) ) estado = "AL";
-        if("Amazonas".equals(boxUF.valueProperty().get()) ) estado = "AM";
-        if("Amapá".equals(boxUF.valueProperty().get()) ) estado = "AP";
-        if("Bahia".equals(boxUF.valueProperty().get()) ) estado = "BA";
-        if("Ceará".equals(boxUF.valueProperty().get()) ) estado = "CE";
-        if("Distrito Federal".equals(boxUF.valueProperty().get()) ) estado = "DF";
-        if("Espírito Santo".equals(boxUF.valueProperty().get()) ) estado = "ES";
-        if("Goiás".equals(boxUF.valueProperty().get()) ) estado = "GO";
-        if("Maranhão".equals(boxUF.valueProperty().get()) ) estado = "MA";
-        if("Minas Gerais".equals(boxUF.valueProperty().get()) ) estado = "MG";
-        if("Mato Grosso do Sul".equals(boxUF.valueProperty().get()) ) estado = "MS";
-        if("Mato Grosso".equals(boxUF.valueProperty().get()) ) estado = "MT";
-        if("Pará".equals(boxUF.valueProperty().get()) ) estado = "PA";
-        if("Paraíba".equals(boxUF.valueProperty().get()) ) estado = "PB";
-        if("Pernambuco".equals(boxUF.valueProperty().get()) ) estado = "PE";
-        if("Piauí".equals(boxUF.valueProperty().get()) ) estado = "PI";
-        if("Paraná".equals(boxUF.valueProperty().get()) ) estado = "PR";
-        if("Rio de Janeiro".equals(boxUF.valueProperty().get()) ) estado = "RJ";
-        if("Rio Grande do Norte".equals(boxUF.valueProperty().get()) ) estado = "RN";
-        if("Rondônia".equals(boxUF.valueProperty().get()) ) estado = "RO";
-        if("Roraima".equals(boxUF.valueProperty().get()) ) estado = "RR";
-        if("Rio Grande do Sul".equals(boxUF.valueProperty().get()) ) estado = "RS";
-        if("Santa Catarina".equals(boxUF.valueProperty().get()) ) estado = "SC";
-        if("Sergipe".equals(boxUF.valueProperty().get()) ) estado = "SE";
-        if("São Paulo".equals(boxUF.valueProperty().get()) ) estado = "SP";
-        if("Tocantins".equals(boxUF.valueProperty().get()) ) estado = "TO";
-        return estado;
-    }
-    
     
     public void carregarTableVielCliente(){
         //configura as colunas para exibir o nome e cpf na tabela (TableView)
@@ -164,16 +127,16 @@ public class FXMLAnchorPaneCadastrosClientesController implements Initializable 
             ClienteCPF.setText(cliente.getCpf());
             ClienteRG.setText(cliente.getRg());
             ClienteEnd.setText(cliente.getEnd());
-            //boxCidade.set
+            ClienteUF.setText(cliente.getUf());
             ClienteBairro.setText(cliente.getBairro());
-            //boxUF
+            ClienteCidade.setText(cliente.getCidade());
             ClienteTelefone.setText(cliente.getTelefone());
             //IMAGEM
-            //boxSexo
-            //boxNacionalidade
+            boxSexo.setText(cliente.getSexo());
+            boxNacionalidade.setText(cliente.getNacionalidade());
             //CEP Ver se vai utilizar
             //ClienteNasc.setText(String.valueOf(cliente.getNasc()));
-            //boxEstCivil
+            boxEstCivil.setText(cliente.getEstCivil());
             //ClienteCelular.setText(cliente.getCelular());
             //ClienteEmail.setText(cliente.getEmail());
             ClienteNumero.setText(String.valueOf(cliente.getNumeroEnd()));

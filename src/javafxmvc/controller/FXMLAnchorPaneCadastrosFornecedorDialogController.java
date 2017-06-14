@@ -52,6 +52,7 @@ public class FXMLAnchorPaneCadastrosFornecedorDialogController implements Initia
         cidestDao.setConnection(connection);
         
         carregarEstado();
+        carregaCidades();
     }    
     
     //CONVERTE UMA STRING EM FORMATO DATE
@@ -83,6 +84,13 @@ public class FXMLAnchorPaneCadastrosFornecedorDialogController implements Initia
         List<String> listaEstado = cidestDao.listaEstados();
         listaEstado.forEach((nomeEstado) -> {
             boxUF.getItems().add(nomeEstado);
+        });
+    }
+    
+    public void carregaCidades(){
+        List<String> listaCidade = cidestDao.listaCidades();
+        listaCidade.forEach((nomeCidade) -> {
+            boxCidade.getItems().add(nomeCidade);
         });
     }
     
