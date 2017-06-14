@@ -15,7 +15,7 @@
                   <MenuItem fx:id="menuItemCadastrosCategorias" mnemonicParsing="false" text="Categoria" />
                   <MenuItem fx:id="handleMenuItemCadastrosClientes" mnemonicParsing="false" onAction="#handleMenuItemCadastrosClientes" text="Cliente" />
                   <MenuItem fx:id="menuItemCadastrosFornecedores" mnemonicParsing="false" onAction="#handleMenuItemCadastrosFornecedor" text="Fornecedor" />
-                  <MenuItem fx:id="menuItemCadastrosProdutos" mnemonicParsing="false" text="Produto" />
+                  <MenuItem fx:id="menuItemCadastrosProdutos" mnemonicParsing="false" onAction="#handleMenuItemCadastrosProduto" text="Produto" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Processos">
