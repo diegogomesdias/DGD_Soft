@@ -2,11 +2,9 @@ package javafxmvc.controller;
 
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -18,7 +16,6 @@ import javafx.stage.Stage;
 import javafxmvc.model.dao.CidEstDao;
 import javafxmvc.model.database.Database;
 import javafxmvc.model.database.DatabaseFactory;
-import javafxmvc.model.domain.CidadeEstado;
 import javafxmvc.model.domain.Cliente;
 
 public class FXMLAnchorPaneCadastrosClientesDialogController implements Initializable {

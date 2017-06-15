@@ -79,7 +79,8 @@ public class FXMLAnchorPaneCadastrosFornecedorDialogController implements Initia
          });
     }*/
     
-    //CARREGA OS ESTADOS E OS ADD EM UMA COMBOBOX    
+    //CARREGA OS ESTADOS E OS ADD EM UMA COMBOBOX    List<String> listaEstado = cidestDao.listaEstados();
+        
     public void carregarEstado(){
         List<String> listaEstado = cidestDao.listaEstados();
         listaEstado.forEach((nomeEstado) -> {

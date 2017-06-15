@@ -37,6 +37,11 @@ public class FXMLAnchorPaneCadastrosProdutoController implements Initializable {
     @FXML   private Label ProdutoLucro;
     @FXML   private Label ProdutoUnidade;
     @FXML   private Label ProdutoEstoque;
+    @FXML   private Label ProdutoValorCusto;
+    @FXML   private Label ProdutoValorVenda;
+    @FXML   private Label ProdutoCategoria;
+    @FXML   private Label ProdutoCodBarras;
+    @FXML   private Label ProdutoEstoqueMin;
     
     @FXML    private TableView<Produto> tableViewProdutos;
     @FXML    private TableColumn<Produto, String> tableColumnProdutoNome;
@@ -77,13 +82,17 @@ public class FXMLAnchorPaneCadastrosProdutoController implements Initializable {
     
     public void selecionarItemTableViewProdutos(Produto produto){
         if(produto != null){
-            //ClienteNome.setText(cliente.getNome());
             ProdutoCodigo.setText(String.valueOf(produto.getCdProduto()));
             ProdutoNome.setText(produto.getNome());
-            ProdutoFornecedor.setText(produto.getFabricante());
+            ProdutoFornecedor.setText(produto.getFornecedor());
+            ProdutoEstoque.setText(String.valueOf(produto.getEstoque()));
+            ProdutoValorCusto.setText(String.valueOf(produto.getValorcusto()));
+            ProdutoValorVenda.setText(String.valueOf(produto.getValorvenda()));
             ProdutoCNAE.setText(produto.getCnae());
             ProdutoUnidade.setText(produto.getUnidade());
-            
+            ProdutoCategoria.setText(produto.getCategoria());
+            ProdutoCodBarras.setText(String.valueOf(produto.getCodbarras()));
+            ProdutoEstoqueMin.setText(String.valueOf(produto.getEstoqueMin()));
         }else{
             //ClienteNome.setText("");
         }

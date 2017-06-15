@@ -26,48 +26,92 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="352.0" prefWidth="424.0">
                <children>
-                  <Label layoutX="14.0" layoutY="272.0" text="\% Lucro">
+                  <Label layoutX="219.0" layoutY="282.0" text="\% Lucro">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="216.0" text="CNAE">
+                  <Label layoutX="397.0" layoutY="168.0" text="CNAE">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="158.0" text="Fornec.">
+                  <Label layoutX="14.0" layoutY="168.0" text="Fornec.">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="328.0" text="Unidade">
+                  <Label layoutX="397.0" layoutY="226.0" text="Unidade">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="107.0" text="Nome">
+                  <Label layoutX="15.0" layoutY="114.0" text="Nome">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="11.0" layoutY="55.0" text="Codigo">
+                  <Label layoutX="11.0" layoutY="68.0" text="Codigo">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="ProdutoCodigo" layoutX="89.0" layoutY="55.0" text="Label" />
-                  <Label fx:id="ProdutoNome" layoutX="89.0" layoutY="107.0" text="Label" />
-                  <Label fx:id="ProdutoFornecedor" layoutX="89.0" layoutY="158.0" text="Label" />
-                  <Label fx:id="ProdutoCNAE" layoutX="90.0" layoutY="216.0" text="Label" />
-                  <Label fx:id="ProdutoLucro" layoutX="89.0" layoutY="272.0" text="Label" />
-                  <Label fx:id="ProdutoUnidade" layoutX="89.0" layoutY="328.0" text="Label" />
-                  <Label fx:id="ProdutoEstoque" layoutX="466.0" layoutY="107.0" text="Label" />
-                  <Label layoutX="392.0" layoutY="107.0" text="Estoque">
+                  <Label fx:id="ProdutoCodigo" layoutX="89.0" layoutY="68.0" />
+                  <Label fx:id="ProdutoNome" layoutX="89.0" layoutY="114.0" />
+                  <Label fx:id="ProdutoFornecedor" layoutX="88.0" layoutY="168.0" />
+                  <Label fx:id="ProdutoCNAE" layoutX="472.0" layoutY="168.0" />
+                  <Label fx:id="ProdutoLucro" layoutX="294.0" layoutY="282.0" />
+                  <Label fx:id="ProdutoUnidade" layoutX="472.0" layoutY="226.0" />
+                  <Label fx:id="ProdutoEstoque" layoutX="103.0" layoutY="336.0" />
+                  <Label layoutX="398.0" layoutY="335.0" text="Estoqu Min.">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
+                  <Label layoutX="396.0" layoutY="114.0" text="Cód. Barras">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="226.0" text="Categoria">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="401.0" layoutY="282.0" text="Valor Venda">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="282.0" text="Valor Custo">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="336.0" text="Estoque">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ProdutoValorCusto" layoutX="105.0" layoutY="282.0" />
+                  <Label fx:id="ProdutoValorVenda" layoutX="489.0" layoutY="282.0" />
+                  <Label fx:id="ProdutoCategoria" layoutX="102.0" layoutY="226.0" />
+                  <Label fx:id="ProdutoCodBarras" layoutX="487.0" layoutY="114.0" />
+                  <Label fx:id="ProdutoEstoqueMin" layoutX="487.0" layoutY="336.0" />
+                  <Separator layoutX="11.0" layoutY="353.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Separator layoutX="11.0" layoutY="297.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Separator layoutX="11.0" layoutY="241.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Separator layoutX="11.0" layoutY="183.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Separator layoutX="11.0" layoutY="131.0" prefHeight="3.0" prefWidth="633.0" />
+                  <Separator layoutX="11.0" layoutY="85.0" prefHeight="1.0" prefWidth="108.0" />
+                  <Label layoutX="352.0" layoutY="24.0" text="Cadastro de Produtos" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnRemover" layoutX="830.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleBtnExcluir" text="Remover" />
+                  <Button fx:id="btnAlterar" layoutX="751.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleBtnAlterar" prefHeight="25.0" prefWidth="64.0" text="Alterar" />
+                  <Button fx:id="btnInserir" layoutX="674.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleBtnInserir" prefHeight="25.0" prefWidth="64.0" text="Inserir" />
                </children></AnchorPane>
         </items>
       </SplitPane>

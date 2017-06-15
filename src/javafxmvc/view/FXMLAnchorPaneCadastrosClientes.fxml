@@ -25,7 +25,7 @@
                   </TableView>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="352.0" prefWidth="424.0">
                <children>
                   <Label layoutX="342.0" layoutY="14.0" text="Cadastro de Clientes" textAlignment="CENTER">
                      <font>
@@ -98,9 +98,9 @@
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font></Label>
-                  <Button fx:id="btnInserir" layoutX="664.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleBtnInserir" prefHeight="25.0" prefWidth="64.0" text="Inserir" />
-                  <Button fx:id="btnAlterar" layoutX="741.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleBtnAlterar" prefHeight="25.0" prefWidth="64.0" text="Alterar" />
-                  <Button fx:id="btnRemover" layoutX="820.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleBtnExcluir" text="Remover" />
+                  <Button fx:id="btnInserir" layoutX="674.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleBtnInserir" prefHeight="25.0" prefWidth="64.0" text="Inserir" />
+                  <Button fx:id="btnAlterar" layoutX="748.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleBtnAlterar" prefHeight="25.0" prefWidth="64.0" text="Alterar" />
+                  <Button fx:id="btnRemover" layoutX="822.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleBtnExcluir" text="Remover" />
                   <Label layoutX="182.0" layoutY="325.0" text="Celular">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />

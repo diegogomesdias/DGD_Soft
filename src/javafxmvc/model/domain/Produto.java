@@ -6,7 +6,10 @@ public class Produto implements Serializable {
 
     private int cdProduto;
     private String nome;
-    private String fabricante;
+    private String fornecedor;
+    private String categoria;
+    private int codbarras;
+    private int estoqueMin;
     private double valorcusto;
     private double valorlucro;
     private double valorvenda;
@@ -17,12 +20,15 @@ public class Produto implements Serializable {
     public Produto() {
     }
 
-    public Produto(int cdProduto, String nome, String fabricante,double valorcusto, double valorlucro, 
-                   double valorvenda, int estoque,String unidade,String cnae ) 
+    public Produto(int cdProduto, String nome, String fornecedor,String categoria, int codBarras, int estoqueMin,
+                    double valorcusto, double valorlucro,double valorvenda, int estoque,String unidade,String cnae ) 
     {
         this.cdProduto = cdProduto;
         this.nome = nome;
-        this.fabricante = fabricante;
+        this.fornecedor = fornecedor;
+        this.categoria = categoria;
+        this.codbarras = codBarras;
+        this.estoqueMin = estoqueMin;
         this.valorcusto = valorcusto;
         this.valorlucro = valorlucro;
         this.valorvenda = valorvenda;
@@ -47,14 +53,38 @@ public class Produto implements Serializable {
         this.nome = nome;
     }
 
-    public String getFabricante() {
-        return fabricante;
+    public String getFornecedor() {
+        return fornecedor;
     }
 
-    public void setFabricante(String fabricante) {
-        this.fabricante = fabricante;
+    public void setFornecedor(String fornecedor) {
+        this.fornecedor = fornecedor;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public int getCodbarras() {
+        return codbarras;
+    }
+
+    public void setCodbarras(int codbarras) {
+        this.codbarras = codbarras;
+    }
+
+    public int getEstoqueMin() {
+        return estoqueMin;
+    }
+
+    public void setEstoqueMin(int estoqueMin) {
+        this.estoqueMin = estoqueMin;
+    }
+    
     public double getValorcusto() {
         return valorcusto;
     }

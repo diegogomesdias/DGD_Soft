@@ -24,13 +24,20 @@ public class ProdutoDAO {
     }
 
     public boolean inserir(Produto produto) {
-        String sql = "INSERT INTO produtos(nome, preco, quantidade, cdCategoria) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO produto(nome, fabricante, valorcusto, valorvenda,estoque,un,"
+                + "cnae,codbarras,categoria,estoquemin) VALUES(?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, produto.getNome());
-            //stmt.setDouble(2, produto.getPreco());
-            //stmt.setInt(3, produto.getQuantidade());
-            //stmt.setInt(4, produto.getCategoria().getCdCategoria());
+            stmt.setString(2, produto.getFornecedor());
+            stmt.setDouble(3, produto.getValorcusto());
+            stmt.setDouble(4, produto.getValorvenda());
+            stmt.setInt(5, produto.getEstoque());
+            stmt.setString(6, produto.getUnidade());
+            stmt.setString(7, produto.getCnae());
+            stmt.setInt(8, produto.getCodbarras());
+            stmt.setString(9, produto.getCategoria());
+            stmt.setInt(10, produto.getEstoqueMin());
             stmt.execute();
             return true;
         } catch (SQLException ex) {
@@ -40,14 +47,21 @@ public class ProdutoDAO {
     }
 
     public boolean alterar(Produto produto) {
-        String sql = "UPDATE produtos SET nome=?, preco=?, quantidade=?, cdCategoria=? WHERE cdProduto=?";
+        String sql = "UPDATE produto SET nome=?, fabricante=?, valorcusto=?, valorvenda=?,estoque=?,un=?,cnae=?,"
+                + "codbarras=?,categoria=?,estoquemin=? WHERE id=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, produto.getNome());
-            //stmt.setDouble(2, produto.getPreco());
-            //stmt.setInt(3, produto.getQuantidade());
-            //stmt.setInt(4, produto.getCategoria().getCdCategoria());
-            stmt.setInt(5, produto.getCdProduto());
+            stmt.setString(2, produto.getFornecedor());
+            stmt.setDouble(3, produto.getValorcusto());
+            stmt.setDouble(4, produto.getValorvenda());
+            stmt.setInt(5, produto.getEstoque());
+            stmt.setString(6, produto.getUnidade());
+            stmt.setString(7, produto.getCnae());
+            stmt.setInt(8, produto.getCodbarras());
+            stmt.setString(9, produto.getCategoria());
+            stmt.setInt(10, produto.getEstoqueMin());
+            stmt.setInt(11, produto.getCdProduto());
             stmt.execute();
             return true;
         } catch (SQLException ex) {
@@ -57,7 +71,7 @@ public class ProdutoDAO {
     }
 
     public boolean remover(Produto produto) {
-        String sql = "DELETE FROM produtos WHERE cdCliente=?";
+        String sql = "DELETE FROM produto WHERE id=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, produto.getCdProduto());
@@ -80,13 +94,16 @@ public class ProdutoDAO {
                 Categoria categoria = new Categoria();
                 produto.setCdProduto(rs.getInt("id"));
                 produto.setNome(rs.getString("nome"));
-                produto.setFabricante(rs.getString("fabricante"));
+                produto.setFornecedor(rs.getString("fabricante"));
                 produto.setValorcusto(rs.getDouble("valorcusto"));
                 produto.setValorlucro(rs.getDouble("valorlucro"));
                 produto.setValorvenda(rs.getDouble("valorlucro"));
                 produto.setEstoque(rs.getInt("estoque"));
                 produto.setUnidade(rs.getString("un"));
                 produto.setCnae(rs.getString("cnae"));
+                produto.setCategoria(rs.getString("categoria"));
+                produto.setCodbarras(rs.getInt("codbarras"));
+                produto.setEstoqueMin(rs.getInt("estoquemin"));
                 retorno.add(produto);
             }
         } catch (SQLException ex) {
