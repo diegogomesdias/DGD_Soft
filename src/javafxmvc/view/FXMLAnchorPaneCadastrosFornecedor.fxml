@@ -7,13 +7,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="470.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLAnchorPaneCadastrosFornecedorController">
+<AnchorPane id="AnchorPane" prefHeight="470.0" prefWidth="1200.0" style="-fx-background-color: #1d1d1d;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLAnchorPaneCadastrosFornecedorController">
    <children>
       <SplitPane dividerPositions="0.24457429048414023" layoutX="110.0" layoutY="50.0" prefHeight="470.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #1d1d1d;">
                <children>
-                  <TableView fx:id="tableViewFornecedor" layoutX="20.0" layoutY="21.0" prefHeight="398.0" prefWidth="240.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="tableViewFornecedor" layoutX="20.0" layoutY="21.0" prefHeight="398.0" prefWidth="240.0" style="-fx-background-color: #1d1d1d; -fx-base: #1d1d1d; -fx-control-inner-background: #1d1d1d; -fx-table-cell-border-color: transparent;; -fx-table-header-border-color: transparent;; -fx-padding: 5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="tableColumnFornecedorNome" prefWidth="158.0" text="Fornecedor" />
                       <TableColumn fx:id="tableColumnFornecedorCNPJ" prefWidth="75.0" text="CNPJ" />
@@ -24,88 +24,93 @@
                   </TableView>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #1d1d1d;">
                <children>
-                  <Label fx:id="FornecedorNome" layoutX="112.0" layoutY="104.0" prefHeight="17.0" prefWidth="114.0" />
-                  <Label fx:id="FornecedorCNPJ" layoutX="359.0" layoutY="152.0" />
-                  <Label layoutX="14.0" layoutY="104.0" text="Nome Fantasia">
+                  <Label layoutX="256.0" layoutY="14.0" style="-fx-text-fill: white;" text="Cadastro de Fornecedor" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="FornecedorNome" layoutX="112.0" layoutY="104.0" prefHeight="17.0" prefWidth="114.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;;; -fx-text-fill: white; -fx-opacity: 0.6;;" />
+                  <Label fx:id="FornecedorCNPJ" layoutX="359.0" layoutY="152.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;;; -fx-text-fill: white; -fx-opacity: 0.6;;" />
+                  <Label layoutX="14.0" layoutY="104.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;; -fx-text-fill: white; -fx-opacity: 0.9;" text="Nome Fantasia">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="315.0" layoutY="104.0" text="Razão Social">
+                  <Label layoutX="315.0" layoutY="104.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;; -fx-text-fill: white; -fx-opacity: 0.9;" text="Razão Social">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="16.0" layoutY="160.0" text="Tipo de Empresa">
+                  <Label layoutX="16.0" layoutY="160.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;; -fx-text-fill: white; -fx-opacity: 0.9;" text="Tipo de Empresa">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="314.0" layoutY="152.0" text="CNPJ">
+                  <Label layoutX="314.0" layoutY="152.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;; -fx-text-fill: white; -fx-opacity: 0.9;" text="CNPJ">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="504.0" layoutY="152.0" text="Insc. Social">
+                  <Label layoutX="504.0" layoutY="152.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;; -fx-text-fill: white; -fx-opacity: 0.9;" text="Insc. Social">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="214.0" text="Enrredeço">
+                  <Label layoutX="14.0" layoutY="214.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;; -fx-text-fill: white; -fx-opacity: 0.9;" text="Enrredeço">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="311.0" layoutY="213.0" text="Numero">
+                  <Label layoutX="311.0" layoutY="213.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;; -fx-text-fill: white; -fx-opacity: 0.9;" text="Numero">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="270.0" text="Bairro">
+                  <Label layoutX="14.0" layoutY="270.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;; -fx-text-fill: white; -fx-opacity: 0.9;" text="Bairro">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="314.0" layoutY="269.0" text="UF">
+                  <Label layoutX="314.0" layoutY="269.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;; -fx-text-fill: white; -fx-opacity: 0.9;" text="UF">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="504.0" layoutY="269.0" text="Cidade">
+                  <Label layoutX="504.0" layoutY="269.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;; -fx-text-fill: white; -fx-opacity: 0.9;" text="Cidade">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="326.0" text="Email">
+                  <Label layoutX="14.0" layoutY="326.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;; -fx-text-fill: white; -fx-opacity: 0.9;" text="Email">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="314.0" layoutY="325.0" text="Cep">
+                  <Label layoutX="314.0" layoutY="325.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;; -fx-text-fill: white; -fx-opacity: 0.9;" text="Cep">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="504.0" layoutY="325.0" text="Telefone">
+                  <Label layoutX="504.0" layoutY="325.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;; -fx-text-fill: white; -fx-opacity: 0.9;" text="Telefone">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="FornecedorRSocial" layoutX="414.0" layoutY="104.0" />
-                  <Label fx:id="FornecedorEndereco" layoutX="112.0" layoutY="214.0" />
-                  <Label fx:id="FornecedorBairro" layoutX="112.0" layoutY="270.0" />
-                  <Label fx:id="FornecedorEmail" layoutX="112.0" layoutY="326.0" />
-                  <Label fx:id="FornecedorNumero" layoutX="364.0" layoutY="213.0" />
-                  <Label fx:id="FornecedorUF" layoutX="367.0" layoutY="269.0" />
-                  <Label fx:id="FornecedorCep" layoutX="367.0" layoutY="325.0" />
-                  <Label fx:id="FornecedorTipoEmpresa" layoutX="134.0" layoutY="160.0" />
-                  <Label fx:id="FornecedorInscSocial" layoutX="580.0" layoutY="152.0" />
-                  <Label fx:id="FornecedorCidade" layoutX="580.0" layoutY="269.0" />
-                  <Label fx:id="FornecedorTelefone" layoutX="580.0" layoutY="325.0" />
-                  <Label fx:id="FornecedorCodigo" layoutX="112.0" layoutY="55.0" />
-                  <Label layoutX="16.0" layoutY="55.0" text="Código">
+                  <Label fx:id="FornecedorRSocial" layoutX="414.0" layoutY="104.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;;; -fx-text-fill: white; -fx-opacity: 0.6;;" />
+                  <Label fx:id="FornecedorEndereco" layoutX="112.0" layoutY="214.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;;; -fx-text-fill: white; -fx-opacity: 0.6;;" />
+                  <Label fx:id="FornecedorBairro" layoutX="112.0" layoutY="270.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;;; -fx-text-fill: white; -fx-opacity: 0.6;;" />
+                  <Label fx:id="FornecedorEmail" layoutX="112.0" layoutY="326.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;;; -fx-text-fill: white; -fx-opacity: 0.6;;" />
+                  <Label fx:id="FornecedorNumero" layoutX="364.0" layoutY="213.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;;; -fx-text-fill: white; -fx-opacity: 0.6;;" />
+                  <Label fx:id="FornecedorUF" layoutX="367.0" layoutY="269.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;;; -fx-text-fill: white; -fx-opacity: 0.6;;" />
+                  <Label fx:id="FornecedorCep" layoutX="367.0" layoutY="325.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;;; -fx-text-fill: white; -fx-opacity: 0.6;;" />
+                  <Label fx:id="FornecedorTipoEmpresa" layoutX="134.0" layoutY="160.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;;; -fx-text-fill: white; -fx-opacity: 0.6;;" />
+                  <Label fx:id="FornecedorInscSocial" layoutX="580.0" layoutY="152.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;;; -fx-text-fill: white; -fx-opacity: 0.6;;" />
+                  <Label fx:id="FornecedorCidade" layoutX="580.0" layoutY="269.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;;; -fx-text-fill: white; -fx-opacity: 0.6;;" />
+                  <Label fx:id="FornecedorTelefone" layoutX="580.0" layoutY="325.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;;; -fx-text-fill: white; -fx-opacity: 0.6;;" />
+                  <Label fx:id="FornecedorCodigo" layoutX="112.0" layoutY="55.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;;; -fx-text-fill: white; -fx-opacity: 0.6;;" />
+                  <Label layoutX="16.0" layoutY="55.0" style="-fx-font-size: 11pt; -fx-font-family: &quot;Segoe UI Semibold&quot;; -fx-text-fill: white; -fx-opacity: 0.9;" text="Código">
                      <font>
                         <Font name="Tahoma Bold" size="13.0" />
                      </font>
