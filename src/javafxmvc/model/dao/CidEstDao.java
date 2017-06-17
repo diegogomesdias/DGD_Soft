@@ -39,7 +39,25 @@ public class CidEstDao {
             }	
         return listaEstado;//Retorne a lista de String com todos os nome do banco de dados
     }
-	
+
+    public List<CidadeEstado> listarTodosEtados(){
+        String sql = "select nom_estado from estado order by nom_estado";
+	List<CidadeEstado> listaEstado = new ArrayList<>();//Crie uma lista para armazenar os dados do banco
+        try{
+            PreparedStatement stmt = getConnection().prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                CidadeEstado cid = new CidadeEstado();
+                cid.setEstado(rs.getString("nom_estado"));
+                listaEstado.add(cid);
+            }
+            
+        }catch(SQLException ex){
+            Logger.getLogger(CidEstDao.class.getName()).log(Level.SEVERE,null,ex);
+        }
+        return listaEstado;
+    }
+    
     public List<String> listaPais() {
         String sql = "select nom_pais from pais order by nom_pais";
 	List<String> listaPaises = new ArrayList<String>();//Crie uma lista para armazenar os dados do banco

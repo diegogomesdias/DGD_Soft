@@ -8,6 +8,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -16,6 +18,7 @@ import javafx.stage.Stage;
 import javafxmvc.model.dao.CidEstDao;
 import javafxmvc.model.database.Database;
 import javafxmvc.model.database.DatabaseFactory;
+import javafxmvc.model.domain.CidadeEstado;
 import javafxmvc.model.domain.Fornecedor;
 
 public class FXMLAnchorPaneCadastrosFornecedorDialogController implements Initializable {
@@ -41,6 +44,9 @@ public class FXMLAnchorPaneCadastrosFornecedorDialogController implements Initia
     //OBJETOS UTILIZADOS
     private String uf;
     private String cidade;
+        
+    private List<CidadeEstado> listaCidEst;
+    private ObservableList<CidadeEstado> observableCidEst;
     
     //atributos para manipulação de banco de dados
     private final Database database = DatabaseFactory.getDatabase("postgresql");
@@ -51,7 +57,8 @@ public class FXMLAnchorPaneCadastrosFornecedorDialogController implements Initia
     public void initialize(URL url, ResourceBundle rb) {
         cidestDao.setConnection(connection);
         
-        carregarEstado();
+        //carregarEstado();
+        carregaComboBoxEstados();
         carregaCidades();
     }    
     
@@ -77,7 +84,7 @@ public class FXMLAnchorPaneCadastrosFornecedorDialogController implements Initia
         listaPais.forEach((nomePais) -> {
             boxNacionalidade.getItems().add(nomePais);
          });
-    }*/
+    }
     
     //CARREGA OS ESTADOS E OS ADD EM UMA COMBOBOX    List<String> listaEstado = cidestDao.listaEstados();
         
@@ -86,6 +93,12 @@ public class FXMLAnchorPaneCadastrosFornecedorDialogController implements Initia
         listaEstado.forEach((nomeEstado) -> {
             boxUF.getItems().add(nomeEstado);
         });
+    }
+    */
+    public void carregaComboBoxEstados(){
+        listaCidEst = cidestDao.listarTodosEtados();
+        observableCidEst = FXCollections.observableArrayList(listaCidEst);
+        boxUF.setItems(observableCidEst);
     }
     
     public void carregaCidades(){

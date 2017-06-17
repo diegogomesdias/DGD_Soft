@@ -1,13 +1,26 @@
 package javafxmvc.model.domain;
 
+import java.io.Serializable;
 
-public class CidadeEstado {
+
+public class CidadeEstado implements Serializable{
 
 	private long cod_cidade;
 	private long cod_estado;
 	private String nom_cidade;
 	private String estado;
         private String pais;
+        
+        public CidadeEstado(){   
+        }
+        
+        public CidadeEstado(long cod_cidade, long cod_estado, String nom_cidade, String estado, String pais){
+            this.cod_cidade = cod_cidade;
+            this.cod_estado = cod_estado;
+            this.nom_cidade = nom_cidade;
+            this.estado = estado;
+            this.pais = pais;
+        }
         
 	public long getCod_cidade() {
 		return cod_cidade;
@@ -41,7 +54,9 @@ public class CidadeEstado {
 		this.pais = pais;
 	}
         
-	//public String toString(){  return this.nom_cidade;   }
-	
+        @Override
+        public String toString(){
+            return this.estado;
+        }	
     
 }
